@@ -20,5 +20,17 @@ module.exports = {
             template: "/src/index.html",
             inject: "body"
         })
-    ]
+    ],
+    module: {
+        rules: [
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource'
+            },
+            {
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader']
+            }
+        ]
+    }
 }
